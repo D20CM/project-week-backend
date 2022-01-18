@@ -1,33 +1,11 @@
+import express from "express";
+import { Router } from "express";
 
+const router = Router();
 
-// /* GET users listing. */
-// router.get("/", function (req, res, next) {
-//   res.json({ message: "I wish we had some information to give you ☹️" });
-// });
-
-// export default router;
-
-
-// router.get("/users", async function (req, res) {
-//   if (req.query.name) {
-//     console.log(req.query.name);
-//     let searchedName = req.query.name;
-//     // console.log("You are looking for " + searchedName);
-//     const foundUser = await getUserByName(searchedName);
-//     res.json(foundUser);
-//   } else {
-//     const users = await getAllUsers();
-//     res.json(users);
-//   }
-// });
-
-// app.post("/users", async function (req, res) {
-//   let newUser = req.body;
-//   const addedUser = await addUser(newUser);
-//   res.json(addedUser);
-// });
-
-// export default router
+router.get("/", function (req, res, next) {
+  res.json({ message: "I wish we had some information to give you ☹️" });
+});
 
 router.get("/users", async function (req, res) {
   if (req.query.id) {
@@ -48,7 +26,6 @@ router.post("/users", async function (req, res) {
 });
 
 router.put("/users/:id", async function (req, res) {
-  //id???
   let id = req.params.id; ///Number???-------------------------------
   let newData = req.body;
   const updatedUser = await updateUser(id, newData);
@@ -61,3 +38,4 @@ router.delete("/users/:id", async function (req, res) {
   res.json(deletedUser);
 });
 
+export default router;

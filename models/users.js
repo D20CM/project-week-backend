@@ -3,13 +3,13 @@ import query from "../db/index.js";
 
 //get all users
 export async function getAllUsers() {
-  let getUsers = await query("SELECT * FROM users ORDER BY id;"); //id??
+  let getUsers = await query("SELECT * FROM users ORDER BY userid;"); //id??
   return getUsers.rows;
 }
 
 //get user by id
 export async function getUserById(id) {
-  let getUser = await query("SELECT * FROM users WHERE id = $1;", [id]); //id???
+  let getUser = await query("SELECT * FROM users WHERE googleuuid = $1;", [id]);
   return getUser.rows;
 }
 
@@ -23,13 +23,26 @@ export async function addUser(user) {
 }
 
 //update user ---- what inputs here????
-export async function updateUser(somenewdata) {
-  let userToBeUpdated = await query("UPDATE users SET  ;", []); ///TBC-----------------------------------------
+export async function updateUser(id, updatedUser) {
+  const [
+    googleuuid,
+    email,
+    googledisplayname,
+    displayname,
+    bootcamperid,
+    cohort,
+  ] = updatedUser;
+  let userToBeUpdated = await query(
+    "UPDATE users SET email = $2, googledisplayname = $3, displayname=$4, bootcamperid=$5, cohort=$6 WHERE googleuuid = $1;",
+    [id, email, googledisplayname, displayname, bootcamperid, cohort]
+  );
   return userToBeUpdated.rows;
 }
 
 //delete user
 export async function deleteUser(id) {
-  let userToBeDeleted = await query("DELETE FROM users WHERE id = $1", [id]);
-  return userToBeUpdated.rows;
+  let userToBeDeleted = await query("DELETE FROM users WHERE googleuuid = $1", [
+    id,
+  ]);
+  return userToBeDeleted.rows;
 }
