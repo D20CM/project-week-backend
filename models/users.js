@@ -3,9 +3,14 @@ import query from "../db/index.js";
 
 //get all users
 export async function getAllUsers() {
-  console.log("get request");
-  let getUsers = await query("SELECT * FROM users ORDER BY id;"); //id???
+  let getUsers = await query("SELECT * FROM users ORDER BY id;"); //id??
   return getUsers.rows;
+}
+
+//get user by id
+export async function getUserById(id) {
+  let getUser = await query("SELECT * FROM users WHERE id = $1;", [id]); //id???
+  return getUser.rows;
 }
 
 //create a new user
@@ -17,28 +22,14 @@ export async function addUser(user) {
   return newUser.rows;
 }
 
-
 //update user ---- what inputs here????
-export async function updateScore(userName, newData){
-
-    let userToBeUpdated = await query("UPDATE users SET  ;",[what will we update???]);
-    return userToBeUpdated.rows;
-
+export async function updateUser(somenewdata) {
+  let userToBeUpdated = await query("UPDATE users SET  ;", []); ///TBC-----------------------------------------
+  return userToBeUpdated.rows;
 }
 
-//delete user 
-//delete player
-// export function deletePlayer(playerName){
-//     let playerToBeDeleted = players.find(function(player){
-//         return player.name === playerName;
-//     });
-
-//     let index = players.findIndex(function(player){
-//         return player.name === playerName;
-//     });
-
-//     players.splice(index,1);
-//     console.log(players);
-//     return playerToBeDeleted;
-    
-// }
+//delete user
+export async function deleteUser(id) {
+  let userToBeDeleted = await query("DELETE FROM users WHERE id = $1", [id]);
+  return userToBeUpdated.rows;
+}
