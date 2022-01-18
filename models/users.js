@@ -3,6 +3,7 @@ import query from "../db/index.js";
 
 //get all users
 export async function getAllUsers() {
+  console.log("in the models");
   let getUsers = await query("SELECT * FROM users ORDER BY userid;"); //id??
   return getUsers.rows;
 }

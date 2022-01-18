@@ -15,3 +15,5 @@ const users = [
     googledisplayname: "Barry Davies",
   },
 ];
+
+export default users;

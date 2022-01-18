@@ -7,6 +7,7 @@ import cors from "cors";
 import logger from "morgan";
 import Login from "./routes/login.js";
 
+import router from "./routes/login.js";
 import usersRouter from "./routes/users.js";
 
 const app = express();
@@ -20,7 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-// app.use('/users', usersRouter);
+app.use("/users", usersRouter);
 app.use("/login", Login);
 
 app.use(function (req, res, next) {
