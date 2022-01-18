@@ -1,5 +1,4 @@
 {
-
    "name": "project-week-backend",
    "version": "0.0.0",
    "private": true,
@@ -7,8 +6,8 @@
    "scripts": {
       "start": "node -r dotenv/config ./bin/www.js",
       "dev": "nodemon -r dotenv/config ./bin/www.js",
-    "dbcreateuserstable": "node createUsersTable.js",
-    "dbpopulateuserstable": "node populateUsersTable.js"
+      "dbcreateuserstable": "node createUsersTable.js",
+      "dbpopulateuserstable": "node populateUsersTable.js"
    },
    "dependencies": {
       "cookie-parser": "~1.4.4",
@@ -18,7 +17,7 @@
       "express": "~4.16.1",
       "firebase-admin": "^10.0.1",
       "morgan": "~1.9.1",
+      "nodemon": "^2.0.15",
       "pg": "^8.7.1"
    }
-
 }
