@@ -21,3 +21,9 @@ router.get("/users", async function (req, res) {
     res.json(users);
   }
 });
+
+app.post("/users", async function (req, res) {
+  let newUser = req.body;
+  const addedUser = await addUser(newUser);
+  res.json(addedUser);
+});
