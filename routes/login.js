@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
    const userObject = await admin.auth().verifyIdToken(req.body.uid);
 
    res.json({
-      success: userObject,
+      userData: userObject,
    });
 });
 
