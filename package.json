@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node ./bin/www.js"
+    "start": "node ./bin/www.js",
+    "dbcreateuserstable": "node createUsersTable.js",
+    "dbpopulateuserstable": "node populateUsersTable.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
