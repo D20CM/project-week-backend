@@ -25,14 +25,14 @@ export async function addUser(user) {
 
 //update user ---- what inputs here????
 export async function updateUser(id, updatedUser) {
-  const [
+  const {
     googleuuid,
     email,
     googledisplayname,
     displayname,
     bootcamperid,
     cohort,
-  ] = updatedUser;
+  } = updatedUser;
   let userToBeUpdated = await query(
     "UPDATE users SET email = $2, googledisplayname = $3, displayname=$4, bootcamperid=$5, cohort=$6 WHERE googleuuid = $1;",
     [id, email, googledisplayname, displayname, bootcamperid, cohort]
