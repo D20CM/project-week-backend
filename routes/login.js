@@ -13,9 +13,10 @@ admin.initializeApp({
 router.post("/", async (req, res) => {
   const userObject = await admin.auth().verifyIdToken(req.body.uid);
 
-  res.json({
-    success: userObject,
-  });
+
+   res.json({
+      userData: userObject,
+   });
 });
 
 export default router;
