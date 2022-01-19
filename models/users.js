@@ -59,15 +59,14 @@ export async function updateUser(id, updatedUser) {
          id,
       ]
    );
-
-   //delete user
-   export async function deleteUser(id) {
-      let userToBeDeleted = await query(
-         "DELETE FROM users WHERE googleuuid = $1 RETURNING googleuuid = $1",
-         [id]
-      );
-      return userToBeDeleted.rows;
-   }
-
    return userToBeUpdated.rows;
+}
+
+//delete user
+export async function deleteUser(id) {
+   let userToBeDeleted = await query(
+      "DELETE FROM users WHERE googleuuid = $1 RETURNING googleuuid = $1",
+      [id]
+   );
+   return userToBeDeleted.rows;
 }
