@@ -42,14 +42,14 @@ usersRouter.post("/", async function (req, res) {
 });
 
 usersRouter.put("/:id", async function (req, res) {
-  let id = req.params.id; ///Number???-------------------------------
+  let id = req.params.id;
   let newData = req.body;
   const updatedUser = await updateUser(id, newData);
   res.json(updatedUser);
 });
 
 usersRouter.delete("/:id", async function (req, res) {
-  let id = req.params.id; ///Number???---------------------------------
+  let id = req.params.id;
   const deletedUser = await deleteUser(id);
   res.json(deletedUser);
 });
