@@ -9,8 +9,8 @@ async function createForms() {
     userID TEXT,
     isCompleted BOOL,
     synopsis TEXT,
-    url TEXT,
-        )`);
+    url TEXT
+        );`);
   console.log("Created forms table: ", res);
 }
 

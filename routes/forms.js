@@ -1,4 +1,5 @@
 import express from "express";
+import app from "../app.js";
 
 import {
   getAllForms,
@@ -6,7 +7,6 @@ import {
   addCompletedForm,
   markFormAsCompleted,
 } from "../models/forms.js";
-import app from "../app.js";
 
 const formsRouter = express.Router();
 formsRouter.use(express.json());
@@ -38,3 +38,6 @@ formsRouter.post("/", async function (req, res) {
   const form = req.body;
   const newForm = await addCompletedForm(form);
 });
+
+
+export default formsRouter;

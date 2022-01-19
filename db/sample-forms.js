@@ -27,3 +27,5 @@ const forms = [
     url: "www.bbc.com",
   },
 ];
+
+export default forms;

@@ -1,7 +1,7 @@
 import query from "../index.js";
 import users from "../sample-users.js";
 
-async function populateScoreboard() {
+async function populateUsersTable() {
   for (let i = 0; i < users.length; i++) {
     const googleuuid = users[i].googleuuid;
     const email = users[i].email;
@@ -14,4 +14,4 @@ async function populateScoreboard() {
     console.log(res);
   }
 }
-populateScoreboard();
+populateUsersTable();
