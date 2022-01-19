@@ -70,3 +70,39 @@ export async function deleteUser(id) {
    );
    return userToBeDeleted.rows;
 }
+
+export async function patchUser(updatedUser, id) {
+   const {
+      googleuuid,
+      email,
+      googledisplayname,
+      displayname,
+      bootcamperid,
+      cohort,
+   } = updatedUser;
+
+   if (googleuuid) {
+      `UPDATE energiser SET googleuuid=$1 WHERE id=$2 RETURNING googleuuid`,
+         [googleuuid, id];
+   }
+   if (email) {
+      `UPDATE energiser SET email=$1 WHERE id=$2 RETURNING , email`,
+         [email, id];
+   }
+   if (googledisplayname) {
+      `UPDATE energiser SET googledisplayname=$1 WHERE id=$2 RETURNING  googledisplayname`,
+         [googledisplayname, id];
+   }
+   if (displayname) {
+      `UPDATE energiser SET displayname=$1 WHERE id=$2 RETURNING displayname `,
+         [displayname, id];
+   }
+   if (bootcamperid) {
+      `UPDATE energiser SET bootcamperid=$1 WHERE id=$2 RETURNING bootcamperid`,
+         [bootcamperid, id];
+   }
+   if (cohort) {
+      `UPDATE energiser SET cohort=$1 WHERE id=$2 RETURNING cohort`,
+         [cohort, id];
+   }
+}
