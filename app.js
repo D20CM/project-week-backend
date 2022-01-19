@@ -5,9 +5,9 @@ import __dirname from "./dirname.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import logger from "morgan";
-import Login from "./routes/login.js";
+// import Login from "./routes/login.js";
 
-import router from "./routes/login.js";
+// import router from "./routes/login.js";
 import usersRouter from "./routes/users.js";
 
 const app = express();
@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/users", usersRouter);
-app.use("/login", Login);
+// app.use("/login", Login);
 
 app.use(function (req, res, next) {
   res.status(404).json({
