@@ -18,11 +18,4 @@ router.post("/", async (req, res) => {
    });
 });
 
-// router.get("/", async (req, res) => {
-//    const userObject = await admin.auth().verifyIdToken(req.body.uid);
-
-//    res.json({
-//       success: true,
-//    });
-// });
 export default router;
