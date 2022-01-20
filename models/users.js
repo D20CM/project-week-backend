@@ -14,6 +14,9 @@ export async function getUserById(id) {
    let getUser = await query("SELECT * FROM users WHERE googleuuid = $1;", [
       id,
    ]);
+
+   console.log(getUser.rows);
+   
    return getUser.rows;
 }
 
