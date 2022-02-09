@@ -15,6 +15,7 @@ Our next step was interview our fellow students and sense-check that our ideas w
 ## The problem
 
 The coaches and team at School Of Code send out twice daily feedback forms for the students to fill out - an opportunity for the students to leave feedback and for the coaches to gain insight into the general mood and thoughts of the bootcampers as a whole. Although most of the similar processes are well streamlined, the feedback forms completion process was slightly more cumbersome. The name, email, bootcamper ID and date fields needed to be entered manually each time, and the bootcamper ID in particular was problematic - a long string of random characters that was originally only to be found in the original student application emails. The Google forms used to collect data, whilst effective, were not particularly pleasant to use, and did not fit the overall aesthetic of other School Of Code documents. We felt this was an area of the overall bootcamper experience that we could improve on.  
+
 ![existing feedback forms](./public/images/whatproblemslide.png)
 
 ## Our solution
@@ -56,6 +57,11 @@ Although we felt the project went pretty well overall, there were a few blockers
 - Deployment bugs during the build process
 
 Although these were not all trivial problems, they did not compare to the main problem we faced - the time constraint. We all felt that given even just a couple of more days, we could have improved upon our MVP and got something we could be even more proud of. Despite this, the project was a tremendous learning experience, and we as a team were really happy with what we managed to produce after only 8 weeks on the bootcamp.
+
+If you've made it this far, thanks for taking the time to read!  Thanks from all of us at team MoScoLuZzy:
+
+@ozzyee @lunay-y @MAli-96 @D20CM  
+
 
 ![signup screenshot](./public/images/signup-screenshot.png)
 ![dashboard screenshot](./public/images/dashboard-screenshot.png)
